@@ -8,7 +8,8 @@ import android.view.Window;
 
 public class SplashScreen extends AppCompatActivity {
 
-int splashDelay = 1500;
+    int splashDelay = 1500;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,12 +23,17 @@ int splashDelay = 1500;
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
+
+                //pindah activity ke Login
                 Intent pindahactivity = new Intent(getApplicationContext(), Login.class);
                 startActivity(pindahactivity);
 
+                //menutup activity ini setelah pindah activity
                 finish();
             }
-        }, splashDelay );
+
+            //masukkan delaynya
+        }, splashDelay);
 
     }
 
